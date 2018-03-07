@@ -1,0 +1,11 @@
+commit da374ff1488ef91c4dd6155f0c4f7c13f18ccdca (HEAD -> logging, origin/master, master)
+Author: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Date:   Wed Mar 7 18:52:10 2018 +0100
+
+    modify l1.txt
+
+commit ba9c709ccf7576fd15ae23306c5ef465f8538aab
+Author: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Date:   Wed Mar 7 18:47:11 2018 +0100
+
+    Initial commit
