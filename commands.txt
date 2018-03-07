@@ -1,0 +1,275 @@
+  
+161072@lab200ab-ws36 MINGW64 ~
+$ mkdir lab1
+
+161072@lab200ab-ws36 MINGW64 ~
+$ cd lab1
+
+161072@lab200ab-ws36 MINGW64 ~/lab1
+$ touch l1.txt
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1
+$ start l1.txt
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1
+$ git init
+Initialized empty Git repository in C:/Users/161072/lab1/.git/
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git add .
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   l1.txt
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git commit -m 'Initial commit'
+[master (root-commit) ba9c709] Initial commit
+ Committer: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 l1.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ start l1.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git commit -m 'modify l1.txt'
+On branch master
+Changes not staged for commit:
+        modified:   l1.txt
+
+no changes added to commit
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git add .
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   l1.txt
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git commit -m 'modify l1.txt'
+[master da374ff] modify l1.txt
+ Committer: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git remote add origin 'https://github.com/damence/lab1.git'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git remote -v
+origin  https://github.com/damence/lab1.git (fetch)
+origin  https://github.com/damence/lab1.git (push)
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 504 bytes | 168.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/damence/lab1.git
+ * [new branch]      master -> master
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ start l1.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git checkout -- l1.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git checkout -b logging
+Switched to a new branch 'logging'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ touch log.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git log
+commit da374ff1488ef91c4dd6155f0c4f7c13f18ccdca (HEAD -> logging, origin/master, master)
+Author: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Date:   Wed Mar 7 18:52:10 2018 +0100
+
+    modify l1.txt
+
+commit ba9c709ccf7576fd15ae23306c5ef465f8538aab
+Author: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Date:   Wed Mar 7 18:47:11 2018 +0100
+
+    Initial commit
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ start log.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git push origin logging
+Total 0 (delta 0), reused 0 (delta 0)
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/damence/origin.git
+To https://github.com/damence/lab1.git
+ * [new branch]      logging -> logging
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git status
+On branch logging
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git checkout master
+Switched to branch 'master'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git pull origin master
+From https://github.com/damence/lab1
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git merge logging
+Already up to date.
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git checkout logging
+Switched to branch 'logging'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git status
+On branch logging
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git add .
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git status
+On branch logging
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   log.txt
+
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git commit -m 'modified.txt'
+[logging eba5a05] modified.txt
+ Committer: unknown <damjan.jovanovski@students.finki.ukim.mk>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 11 insertions(+)
+ create mode 100644 log.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git status
+On branch logging
+nothing to commit, working tree clean
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git push -u origin logging
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 506 bytes | 253.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/damence/origin.git
+To https://github.com/damence/lab1.git
+   da374ff..eba5a05  logging -> logging
+Branch 'logging' set up to track remote branch 'logging' from 'origin'.
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (logging)
+$ git checkout master
+Switched to branch 'master'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git merge logging
+Updating da374ff..eba5a05
+Fast-forward
+ log.txt | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 log.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/damence/origin.git
+To https://github.com/damence/lab1.git
+   da374ff..eba5a05  master -> master
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (master)
+$ git checkout -b allcomands
+Switched to a new branch 'allcomands'
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (allcomands)
+$ touch commands.txt
+
+161072@lab200ab-ws36 MINGW64 ~/lab1 (allcomands)
+$ start commands.txt
+
+
